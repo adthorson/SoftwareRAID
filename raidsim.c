@@ -24,6 +24,18 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+
+char* error_msg = "Error\n";
+char* opt_list  = "level:strip:disks:size:trace:verbose";
+int counter     = 0;
+int level       = -1;
+int strip       = -1;
+int disks       = -1;
+int size        = -1;
+char* trace     = NULL;
+int verbose     = 0;
+int exit_flag   = 0;
+
 /*
  * Uses a switch to decide between different RAID systems
  *
@@ -93,16 +105,6 @@ void doRaid10(){
 
 int main(int argc, char * argv[]){
 
-  char* error_msg = "Error\n";
-	char* opt_list  = "level:strip:disks:size:trace:verbose";
-	int counter     = 0;
-	int level       = -1;
-	int strip       = -1;
-	int disks       = -1;
-	int size        = -1;
-	char* trace     = NULL;
-	int verbose     = 0;
-	int exit_flag   = 0;
 
 	//has appropiate amount of arguments?
 	if((argc != 11) || (argc != 13)){
